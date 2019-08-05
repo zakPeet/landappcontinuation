@@ -1,0 +1,33 @@
+<h2>The list</h2>
+<div *ngFor="let product of products" class ="LandList">
+    <h3>
+    <a [title]="product.name + ' details'">
+      {{ product.name }}
+    </a>
+  </h3>
+
+  <img src="https://www.google.com/search?q=kamulu+farm&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiwwJzP-OrjAhVpxoUKHde3BtkQ_AUIESgB&biw=1366&bih=648#imgrc=BjWsC4DQDn4lkM:" alt="Kamulu">
+
+    <p *ngIf="product.description">
+         Description: {{ product.description }}
+    </p>
+
+    <p *ngIf="product.price">
+         Price: {{ product.price }}
+    </p>
+
+    <button (click)="share()">
+      View
+    </button>
+      
+      <app-product-alerts [product]="product" (notify)="onNotify()">
+
+      </app-product-alerts>
+
+
+</div>
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
